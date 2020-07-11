@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Biod Admin</string>
+
+    <string-array name="barang">
+        <item>TV LED Samsung</item>
+        <item>HP Xiaomi Readme 3</item>
+    </string-array>
+
+</resources>

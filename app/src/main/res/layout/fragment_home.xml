@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.HomeFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Background Aplikasi-->
+            <View
+                android:id="@+id/viewAtas"
+                android:layout_width="match_parent"
+                android:layout_height="147dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewBawah"
+                android:layout_width="370dp"
+                android:layout_height="600dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bgapp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--Akhir Background-->
+
+            <!--Logo-->
+            <ImageView
+                android:layout_width="156dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--Akhir Logo-->
+
+            <!--Akhir Background-->
+
+
+
+
+            <!--========MENU UTAMA===========-->
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewBawah">
+
+
+                <!-- Scrollable content -->
+
+                <LinearLayout
+                    android:id="@+id/bgMenu"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/bgmenu"
+                    android:elevation="0.5dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@+id/viewBawah"
+                    app:layout_constraintStart_toStartOf="@+id/viewBawah"
+                    app:layout_constraintTop_toTopOf="@+id/viewBawah">
+
+
+                    <!--Nama Kreditor-->
+                    <TextView
+                        android:id="@+id/titleNamaKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="Nama Kreditor"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/namaKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/bold"
+                        android:text="Alfian Hidayah"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <!--ID Kreditor-->
+                    <TextView
+                        android:id="@+id/idKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="#130413"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/titleAlamatKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="Alamat : "
+                        android:textSize="18sp" />
+
+                    <!--Alamat Kreditor-->
+                    <TextView
+                        android:id="@+id/alamatKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/medium"
+                        android:text="Jalan Desa Battembat No 20"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/titlePekerjaanKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="Pekerjaan :"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/pekerjaanKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/medium"
+                        android:text="Mahasiswa"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+
+                    <!--Pekerjaan Kreditor-->
+                    <TextView
+                        android:id="@+id/titleNomorHpKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="Nomor HP : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/nomorHpKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/medium"
+                        android:text="089660618004"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/titleNomorKTP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="Nomor KTP : "
+                        android:textSize="18sp" />
+
+                    <!--Nomor HP Kreditor-->
+                    <TextView
+                        android:id="@+id/nomorKTPKreditor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/medium"
+                        android:text="3209352006990002"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    <!--=======AKHIR MENU UTAMA=====-->
+
+</FrameLayout>

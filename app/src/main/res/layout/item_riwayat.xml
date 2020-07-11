@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tanggal_transaksi"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="03 Feb 2020"
+        android:textColor="#00AAE1"
+        android:textSize="15sp"/>
+
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/titleTransaksiID"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaksi ID"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/id_transaksi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#130413"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/nominal_transaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.000"
+                android:textSize="17sp"
+                android:textColor="#F1CA0B"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/nama_barang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laptop Asus ROG Zephyrus"
+            android:textColor="#979797"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

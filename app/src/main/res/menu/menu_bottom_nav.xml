@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cnb_unselectedColor="#FFFFFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_home_white_24dp"
+        app:cnb_backgroundColor="#00AAE1"
+        app:cnb_iconColor="#FFF"
+        app:cnb_textColor="#FFF"
+        />
+
+    <item
+        android:id="@+id/kredit"
+        android:title="Kredit"
+        android:icon="@drawable/ic_payment_white_24dp"
+        app:cnb_backgroundColor="#00AAE1"
+        app:cnb_iconColor="#FFF"
+        app:cnb_textColor="#FFF"
+        />
+
+    <item
+        android:id="@+id/bayar"
+        android:title="Bayar"
+        android:icon="@drawable/icon_qr_code"
+        app:cnb_backgroundColor="#00AAE1"
+        app:cnb_iconColor="#FFF"
+        app:cnb_textColor="#FFF"
+        />
+
+    <item
+        android:id="@+id/riwayat"
+        android:title="Riwayat"
+        android:icon="@drawable/ic_history_white_24dp"
+        app:cnb_backgroundColor="#00AAE1"
+        app:cnb_iconColor="#FFF"
+        app:cnb_textColor="#FFF"
+        />
+
+    <item
+        android:id="@+id/pengaturan"
+        android:title="Pengaturan"
+        android:icon="@drawable/ic_settings_white_24dp"
+        app:cnb_backgroundColor="#00AAE1"
+        app:cnb_iconColor="#FFF"
+        app:cnb_textColor="#FFF"
+        />
+
+</menu>
