@@ -69,7 +69,7 @@ public class LupaPassword extends AppCompatActivity implements View.OnClickListe
         }
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Mengirim Email .. Sabar cuy");
+        progressDialog.setMessage("Mengirim Email .. ");
         progressDialog.setCancelable(false);
         progressDialog.show();
 
