@@ -21,7 +21,7 @@ public interface Api {
         @Field("password") String password);
 
 @FormUrlEncoded
-    @PUT("kreditor")
+    @POST("kreditor")
     Call<ResponseLogin> updateKreditor(
         @Field("id_kreditor") String id,
         @Field("nama_kreditor") String nama,
@@ -30,7 +30,7 @@ public interface Api {
         @Field("alamat") String alamat);
 
 @FormUrlEncoded
-    @PUT("kreditor")
+    @POST("kreditor")
     Call<ResponsePassword> updatePassword(
             //Field itu inputan di API bukan Database
         @Field("id_kreditor") String id,
@@ -40,7 +40,7 @@ public interface Api {
         );
 
     @FormUrlEncoded
-    @PUT("kreditor")
+    @POST("kreditor")
     Call<ResponsePassword> lupaPassword(
             //Field itu inputan di API bukan Database
             @Field("nomor_hp") String nohp,

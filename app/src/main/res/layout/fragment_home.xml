@@ -68,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="35dp"
+                    android:layout_marginBottom="25dp"
                     android:background="@drawable/bgmenu"
                     android:elevation="0.5dp"
                     android:orientation="vertical"
@@ -190,7 +191,7 @@
                         android:text="Nomor KTP : "
                         android:textSize="18sp" />
 
-                    <!--Nomor HP Kreditor-->
+                    <!--Nomor KTP Kreditor-->
                     <TextView
                         android:id="@+id/nomorKTPKreditor"
                         android:layout_width="wrap_content"

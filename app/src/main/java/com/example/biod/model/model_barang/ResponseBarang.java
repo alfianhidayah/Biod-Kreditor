@@ -5,7 +5,7 @@ import java.util.List;
 public class ResponseBarang {
     //responsebarang
     private boolean status;
-    private List<DataBarang> barang;
+    private List<DataBarang> barang = null;
 
     public ResponseBarang(boolean status, List<DataBarang> barang) {
         this.status = status;

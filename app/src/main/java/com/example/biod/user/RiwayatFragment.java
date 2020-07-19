@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.biod.R;
 import com.example.biod.adapter.BarangAdapter;
@@ -39,6 +40,7 @@ public class RiwayatFragment extends Fragment {
     private TransaksiAdapter adapter;
     private List<DataTransaksi> transaksi;
     private ProgressDialog progressDialog;
+    private TextView adaTransaksi;
 
     public RiwayatFragment() {
         // Required empty public constructor
@@ -61,12 +63,14 @@ public class RiwayatFragment extends Fragment {
         String id = data.getId_kreditor();
 
         recyclerViewTransaksi = view.findViewById(R.id.recyclerViewTransaksi);
+        adaTransaksi = view.findViewById(R.id.adaTransaksi);
         recyclerViewTransaksi.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Mengambil Data Transaksi..");
         progressDialog.setCancelable(false);
         progressDialog.show();
+        adaTransaksi.setVisibility(View.GONE);
 
         Call<ResponseTransaksi> call = RetrofitClient.getInstance().getApi().getTransaksi(id);
 
@@ -74,10 +78,14 @@ public class RiwayatFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseTransaksi> call, Response<ResponseTransaksi> response) {
                 progressDialog.hide();
-                if (response.body().getStatus() == true){
+                if (response.body().getStatus()){
+                    adaTransaksi.setVisibility(View.GONE);
                     transaksi = response.body().getTransaksi();
                     adapter =  new TransaksiAdapter(getActivity(), transaksi);
                     recyclerViewTransaksi.setAdapter(adapter);
+                } else {
+                    adaTransaksi.setVisibility(View.VISIBLE);
+                    recyclerViewTransaksi.setVisibility(View.GONE);
                 }
             }
 

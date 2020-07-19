@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.biod.R;
@@ -22,6 +23,7 @@ import com.example.biod.model.model_barang.DataBarang;
 import com.example.biod.model.model_barang.ResponseBarang;
 import com.example.biod.model.model_kreditor.DataKreditor;
 import com.example.biod.model.model_kreditor.ResponseLogin;
+import com.example.biod.model.model_kreditor.ResponsePassword;
 import com.example.biod.storage.SharedPrefManager;
 
 import java.util.List;
@@ -40,7 +42,7 @@ public class KreditFragment extends Fragment {
     private BarangAdapter adapter;
     private List<DataBarang> barang;
     private ProgressDialog progressDialog;
-
+    private TextView adaBarang;
     public KreditFragment() {
         // Required empty public constructor
     }
@@ -60,6 +62,8 @@ public class KreditFragment extends Fragment {
         DataKreditor data = SharedPrefManager.getInstance(getActivity()).getKreditor();
         String id = data.getId_kreditor();
 
+        adaBarang = view.findViewById(R.id.adaBarang);
+
         recyclerViewBarang = view.findViewById(R.id.recyclerViewBarang);
         recyclerViewBarang.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -67,6 +71,7 @@ public class KreditFragment extends Fragment {
         progressDialog.setMessage("Mengambil Data Barang Kredit..");
         progressDialog.setCancelable(false);
         progressDialog.show();
+        adaBarang.setVisibility(View.GONE);
 
         Call<ResponseBarang> call = RetrofitClient.getInstance().getApi().getBarang(id);
 
@@ -74,19 +79,22 @@ public class KreditFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseBarang> call, Response<ResponseBarang> response) {
                 progressDialog.hide();
-
-                if (response.body().getStatus() == true){
+                ResponseBarang responseBarang = response.body();
+                if (response.body().getStatus()){
+                    adaBarang.setVisibility(View.GONE);
                     barang = response.body().getBarang();
                     adapter =  new BarangAdapter(getActivity(), barang);
                     recyclerViewBarang.setAdapter(adapter);
                 } else{
-
+                    adaBarang.setVisibility(View.VISIBLE);
+                    recyclerViewBarang.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBarang> call, Throwable t) {
-
+                adaBarang.setVisibility(View.VISIBLE);
+                recyclerViewBarang.setVisibility(View.GONE);
             }
         });
 
